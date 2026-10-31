@@ -60,6 +60,229 @@
     .active-nav svg {
       stroke: #718A75 !important;
     }
+
+
+    /* ================= RESPONSIVE LAYOUT =================
+       Desktop keeps the original compact no-scroll layout.
+       On tablets and phones, content stacks and the page scrolls
+       naturally so nothing is clipped or squeezed.
+    */
+    @media (max-width: 900px) {
+      html, body {
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+      }
+
+      body {
+        min-height: 100vh;
+        height: auto;
+      }
+
+      header {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px 18px !important;
+      }
+
+      header > div:first-child {
+        min-width: 0;
+        flex-wrap: wrap;
+      }
+
+      header > div:last-child {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      header > div:last-child > * {
+        max-width: 100%;
+      }
+
+      .max-w-\\[1366px\\] {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 18px !important;
+        overflow: visible !important;
+      }
+
+      nav[role="navigation"],
+      body > header + div > nav {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start !important;
+        gap: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      nav[role="navigation"] > div,
+      body > header + div > nav > div:first-child {
+        min-width: max-content;
+      }
+
+      main {
+        min-height: 60vh;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      main > section:not(.hidden) {
+        height: auto !important;
+        min-height: 0;
+        gap: 16px;
+      }
+
+      main .grid.grid-cols-12 > [class*="col-span-"] {
+        grid-column: 1 / -1 !important;
+        width: 100%;
+      }
+
+      main .grid.grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+
+      main .grid {
+        height: auto !important;
+        min-height: 0;
+      }
+
+      main .flex-1 {
+        flex: initial;
+      }
+
+      main .min-h-0 {
+        min-height: auto !important;
+      }
+
+      main .justify-between {
+        gap: 16px;
+      }
+
+      footer {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 18px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+      }
+
+      header > div:first-child {
+        align-items: flex-start;
+      }
+
+      header > div:first-child > div:last-child {
+        display: block;
+      }
+
+      header h1 {
+        font-size: 1.1rem;
+      }
+
+      header p {
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      header > div:last-child {
+        align-items: stretch;
+      }
+
+      header > div:last-child a,
+      header > div:last-child button {
+        width: 100%;
+        justify-content: center;
+        overflow-wrap: anywhere;
+      }
+
+      header > div:last-child > div {
+        align-self: flex-start;
+      }
+
+      .max-w-\\[1366px\\] {
+        padding: 12px !important;
+      }
+
+      body > header + div > nav {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+      }
+
+      body > header + div > nav > div:first-child {
+        gap: 4px;
+      }
+
+      body > header + div > nav button {
+        white-space: nowrap;
+        padding: 8px 10px !important;
+      }
+
+      main h2 {
+        font-size: 1.45rem !important;
+        line-height: 1.25;
+      }
+
+      main .p-6,
+      main .p-5 {
+        padding: 16px !important;
+      }
+
+      main .p-4 {
+        padding: 13px !important;
+      }
+
+      main .grid.grid-cols-3 {
+        gap: 12px;
+      }
+
+      main .grid.grid-cols-3 > * {
+        min-width: 0;
+      }
+
+      main .grid.grid-cols-3 > * .text-xs,
+      main .grid.grid-cols-3 > * .text-\\[11\\.5px\\] {
+        overflow-wrap: anywhere;
+      }
+
+      main .flex.items-center.justify-between {
+        gap: 8px;
+      }
+
+      main .flex.items-center.justify-between > * {
+        min-width: 0;
+      }
+
+      main a,
+      main button {
+        max-width: 100%;
+      }
+
+      main .text-sm,
+      main .text-xs {
+        overflow-wrap: anywhere;
+      }
+
+      footer {
+        align-items: flex-start;
+        font-size: 10px;
+      }
+
+      footer > div {
+        flex-wrap: wrap;
+      }
+
+      footer > div:last-child {
+        line-height: 1.6;
+      }
+    }
+
   </style>
 </head>
 <body class="h-full w-full flex flex-col font-sans select-none bg-brand-bg text-brand-text">
